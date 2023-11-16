@@ -1,0 +1,124 @@
+.container{
+width: 100%;
+max-width: 1240px;
+padding: 0 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 50px;
+}
+body{
+    background-color: #fff;
+}
+@mixin btn($back,$width){
+    width: $width;
+    background-color: $back;
+    height: 50px;
+    border-radius: 5px;
+    color:#fff;
+    font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+}
+.box1{
+    @include btn(red, 150px)
+}
+.box2{
+    @include btn(blue, 200px)
+}
+.box3{
+    @include btn (green, 250px)
+}
+
+@mixin box ($border,$borr, $bacg, $color){
+    width: 150px;
+    height: 70px;
+    background-color:$bacg ;
+    border-radius: $borr;
+    color: $color;
+    border: $border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mix{
+    @include box(2px solid red, 25px,none,red)
+}
+.mix1{
+    @include box( none, 0, green, #fff)
+}
+.mix2{
+    @include box(none, 15px, blue,#fff )
+}
+.mix3{
+    @include box(2px solid yellow, 0, none, yellow)
+}
+.div{
+width: 150px;
+height: 50px;
+background-color: #000;
+text-transform: uppercase;
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+z-index: 999;
+box-shadow: 2px 2px 10px magenta,-2px -2px 10px magenta;
+margin: 50px;
+
+
+}
+.div::after{
+    content: '';
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    clip-path: polygon(0 0, 50% 0, 80% 100%,0 100%);
+    background-color: magenta;
+    z-index: -1;
+}
+.div1{
+    display: flex;
+}
+.div2{
+    width: 150px;
+    height: 50px;
+    background-color: #000;
+    text-transform: uppercase;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 888;
+    box-shadow: 2px 2px 10px aqua, -2px -2px 10px aqua;
+    margin: 50px;
+
+}
+.div2::after{
+    content: '';
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    clip-path: polygon(0 0, 50% 0, 80% 100%,0 100%);
+    background-color: aqua;
+    z-index: -1;
+
+}
+.div0{
+    width: 200px;
+    height: 70px;
+    background-color: aqua;
+    text-transform: uppercase;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 889;
+    box-shadow: 1px 1px 10px magenta, -1px -1px 10px magenta ;
+    margin: 50px;
+}
